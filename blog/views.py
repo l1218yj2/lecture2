@@ -10,6 +10,6 @@ def blog_list(request):
 def blog_detail(request, pk= None):
     data = blog.objects.get(id=pk)
     return render(request, 'detail.html',context ={
-        'blog_detail':data,
+        'blog':data,
     })
 

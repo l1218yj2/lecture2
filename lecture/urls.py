@@ -16,9 +16,19 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from blog.views import blog_list, blog_detail
+from django.conf import settings
+from django.conf.urls.static import static
+from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/$',blog_list, name='index'),
     url(r'^blog/(?P<pk>\d+)/$', blog_detail, name='blog_detail'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+        urlpatterns += [
+                    url(r'^media/(?P<path>.*)$', serve, {
+                        'document_root': settings.MEDIA_ROOT,
+                                }),
+                ]
