@@ -1,13 +1,19 @@
-<body>
-  <div class="page-header">
-    <h1><a href="{% url 'index' %}">Ask Django Blog</a></h1>
-  </div>
-  <div class="content container">
-    <div class="row">
-      <div class="col-md-8">
-        {% block content %}
-        {% endblock %}
-      </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Materialize Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="card-panel teal lighten-2"><h3>Hello World!</h3></div>
+    <div>
+      {% block content %}
+      {% endblcok %}
     </div>
-  </div>
+
   </body>
+</html>
