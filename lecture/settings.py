@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '*',
+    'prac-1.azurewebsites.net',
 ]
 
 
